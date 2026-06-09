@@ -29,6 +29,18 @@ const AUTHCARD = { background:"rgba(30,27,75,0.65)", backdropFilter:"blur(20px)"
 const badge = t => ({ display:"inline-flex", alignItems:"center", padding:"3px 10px", background:tc(t)+"22", color:tc(t), borderRadius:20, fontSize:11, fontWeight:700, border:`1px solid ${tc(t)}44` });
 const obtn  = c => ({ padding:"9px 16px", background:c+"22", border:`1px solid ${c}44`, borderRadius:10, color:c, fontSize:14, fontWeight:600, cursor:"pointer", display:"inline-flex", alignItems:"center", gap:6 });
 
+// ── Conta inicial da Direção ───────────────────────────────────────────────────
+const INIT_USERS = [
+  {
+    id: 1,
+    nome:  "Direção",
+    email: "direcao@educador.edu.es.gov.br",
+    senha: "direcao123",
+    tipo:  "direcao",
+    cargo: "Diretora",
+  },
+];
+
 // ── Dados iniciais ─────────────────────────────────────────────────────────────
 const INIT_AVISOS = [
   { id:1, titulo:"Feira de Ciências", descricao:"A Feira de Ciências acontecerá no dia 20/06. Inscrições até sexta.", data:"2026-06-04", autor:"Coordenação" },
@@ -414,7 +426,7 @@ export default function App() {
   }, []);
   const mob = winW < 768;
 
-  const [users,       setUsers]       = useState([]);
+  const [users,       setUsers]       = useState(INIT_USERS);
   const [screen,      setScreen]      = useState("login");
   const [user,        setUser]        = useState(null);
   const [sideOpen,    setSideOpen]    = useState(false);
